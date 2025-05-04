@@ -1,0 +1,25 @@
+.container {
+    padding: 20px;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.askAiButton {
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
