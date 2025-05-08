@@ -1,6 +1,8 @@
-.linkWrapper {
-  text-decoration: none;
-  display: inline-block;
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .addNews {
@@ -17,4 +19,15 @@
   cursor: pointer;
   font-size: large;
   font-weight: bold;
+}
+
+.linkWrapper {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.filterSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
