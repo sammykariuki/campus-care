@@ -28,7 +28,7 @@ export async function createGrievance(grievance) {
 
   let imagePath = null;
 
-  if (grievance.image && grievance.image.name) {
+  if (grievance.image?.name && grievance.image?.size > 0) {
     const slug = slugify(grievance.title, { lower: true });
 
     const extension = grievance.image.name.split('.').pop();
@@ -57,6 +57,6 @@ export async function createGrievance(grievance) {
       @image_path
     )
     `).run({...grievance,
-            image_path: imagePath
+            image_path: imagePath || null
     });
 }

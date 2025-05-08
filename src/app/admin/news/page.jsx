@@ -23,9 +23,11 @@ export default function NewsPage() {
 
   return (
     <>
-      <div className={classes.addNews}>
-        <Link href="/admin/news/create" className={classes.link}>Add News</Link>
-      </div>
+      <Link href="/admin/news/create" className={classes.linkWrapper}>
+        <div className={classes.addNews}>
+          Add News
+        </div>
+      </Link>
       {news.map((n) => (
         <DisplayCard key={n.id} {...n} path="/admin/news" onDelete={handleDelete} />
       ))}

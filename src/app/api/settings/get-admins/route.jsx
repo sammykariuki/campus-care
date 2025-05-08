@@ -1,15 +1,7 @@
-import db from '@/lib/db.js';
+import db from '@/lib/db';
 import { cookies } from 'next/headers';
 
-// export async function GET() {
 
-//     try {
-//         const admins = db.prepare("SELECT * FROM users WHERE role = 'admin'").all();
-//         return Response.json(admins);
-//     } catch(err) {
-//         console.error('Error fetching admins', err);
-//     }
-// }
 
 export async function GET(request) {
     const cookieStore = (await cookies());

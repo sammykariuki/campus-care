@@ -8,7 +8,7 @@ export async function createNews(news) {
 
   let imagePath = null;
 
-  if (news.image && news.image.name) {
+  if (news.image?.name && news.image?.size > 0) {
     const slug = slugify(news.title, { lower: true });
 
     const extension = news.image.name.split('.').pop();
@@ -36,6 +36,6 @@ export async function createNews(news) {
       @image_path
     )
     `).run({...news,
-            image_path: imagePath
+            image_path: imagePath || null
     });
 }

@@ -42,11 +42,11 @@ export default function SettingsPage() {
 
   return (
     <>
-      <div className={classes.addAdmin}>
-        <Link href="/admin/settings/create" className={classes.link}>
+      <Link href="/admin/settings/create" className={classes.linkWrapper}>
+        <div className={classes.addAdmin}>
           Add
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <table className={classes.table}>
         <thead>

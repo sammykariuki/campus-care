@@ -23,9 +23,11 @@ export default function MyFeedsPage() {
 
   return (
     <>
-      <div className={classes.addFeed}>
-        <Link href="/anonymous/my_feeds/create" className={classes.link}>Add Feed</Link>
-      </div>
+      <Link href="/anonymous/my_feeds/create" className={classes.linkWrapper}>
+        <div className={classes.addFeed}>
+          Add Feed
+        </div>
+      </Link>
       {grievances.map((grievance) => (
         <DisplayCard key={grievance.id} {...grievance} path="/anonymous/my_feeds" onDelete={handleDelete} />
       ))}

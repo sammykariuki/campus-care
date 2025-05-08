@@ -7,7 +7,7 @@ import DisplayCard from "@/components/cards/grievance/display";
 
 export default function Filter({ myPath }) {
   const [grievances, setGrievances] = useState([]);
-  const [filter, setFilter] = useState("most_agreed");
+  const [filter, setFilter] = useState("not_responded");
   const [timeFilter, setTimeFilter] = useState("latest");
 
   useEffect(() => {
