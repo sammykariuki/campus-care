@@ -25,21 +25,20 @@ export async function createFaqAction(prevState, formData) {
         return { message: 'Anonymous users are not allowed to submit faq.'};
     }
 
-    const faq = {
-        question: formData.get('question'),
-        answer: formData.get('answer')
-    };
-
-    if (
-        isInvalidText(faq.question) ||
-        isInvalidText(faq.answer)
-    ) {
-        return {
-            message: 'Invalid input.',
-            question: faq.question,
-            answer: faq.answer
-        }
+    const rawQuestion = formData.get('question') || '';
+    const rawAnswer = formData.get('answer') || '';
+    const question = rawQuestion.trim().replace(/\?+$/, '') + '?';
+    const answer = rawAnswer.trim();
+  
+  
+    if (isInvalidText(question) || isInvalidText(answer)) {
+      return {
+        message: 'Invalid input.',
+        question,
+        answer
+      };
     }
-    await createFaq(faq);
+  
+    await createFaq({ question, answer });
     redirect("/admin/faq");
 }

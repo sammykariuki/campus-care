@@ -41,7 +41,7 @@ export function DisplayCard({ id, question, answer, isExpanded, onToggle, path, 
     return (
         <div className={classes.card}>
             <header className={classes.header}>
-                <h2 className={classes.question}>{question}?</h2>
+                <h2 className={classes.question}>{question}</h2>
                 <div style={{ display: "flex", alignItems: "center" }}>
                 <button type="button" onClick={onToggle} className={classes.toggleButton}>
                     <Image 

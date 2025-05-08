@@ -1,11 +1,12 @@
 'use client';
 
+import { use } from 'react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import classes from './page.module.css';
 
 export default function ReplyPage({ params }) {
-  const grievanceId = params.reply;
+  const { reply: grievanceId } = use(params);
   const router = useRouter();
   const [grievance, setGrievance] = useState(null);
   const [reply, setReply] = useState('');
