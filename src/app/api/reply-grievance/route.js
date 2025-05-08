@@ -1,5 +1,4 @@
 import db from '@/lib/db';
-import xss from 'xss';
 
 export async function POST(req) {
   const { id, response } = await req.json();

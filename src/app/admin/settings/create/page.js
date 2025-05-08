@@ -1,34 +1,3 @@
-// "use client";
-
-// import classes from './page.module.css';
-// import { signUpAdmin } from "@/lib/auth_actions/actions";
-// import { useActionState } from "react";
-
-// export default function CreateAdmin() {
-//     const [state, formAction, pending] = useActionState(signUpAdmin, {message: null, email: null});
-//     return (
-//         <div className={classes.container}>
-//             <form className={classes.card} action={formAction}>
-//                 <h1>Add Admin</h1>
-//                 <div className={classes.field}>
-//                     <label htmlFor="email">Email:</label>
-//                     <input id="email" type="email" placeholder="email@gmail.com" name="email" defaultValue={state.email || ''} required></input>
-//                 </div>
-//                 <div className={classes.field}>
-//                     <label htmlFor="password">Password</label>
-//                     <input id="password" type="password" placeholder="password" name="password" required></input>
-//                 </div>
-//                 {state.message && <p className={classes.error}>{state.message}</p>}
-//                 <div className={classes.actions}>
-//                     <button type="submit" disabled={pending}>
-//                         {pending ? "Submitting...": "Register"}
-//                     </button>
-//                 </div>
-//             </form>
-//         </div>
-//     );
-// }
-
 "use client";
 
 import { useActionState } from "react";

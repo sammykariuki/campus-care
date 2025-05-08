@@ -1,4 +1,4 @@
-import db from "./src/lib/db.js";
+import db from "../db.js";
 
 const dummyGrievance = [
   // Grievance 1: has image only

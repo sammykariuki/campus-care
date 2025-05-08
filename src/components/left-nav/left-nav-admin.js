@@ -27,9 +27,9 @@ export default function NavAdmin() {
   const navItems = [
     { href: '/admin/feeds', label: 'FEEDS', icon: feedsImg },
     { href: '/admin/news', label: 'NEWS', icon: newsImg },
-    { href: '/admin/survey', label: 'SURVEY', icon: surveyImg },
     { href: '/admin/faq', label: 'FAQ', icon: faqImg },
     { href: '/admin/settings', label: 'SETTINGS', icon: settingsImg },
+    { href: '/admin/survey', label: 'SURVEY', icon: surveyImg },
   ];
 
   return (

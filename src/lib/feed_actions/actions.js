@@ -43,5 +43,5 @@ export async function createFeed(prevState, formData) {
         }
     }
     await createGrievance(grievance);
-    redirect("/anonymous/feeds");
+    redirect("/anonymous/my_feeds");
 }

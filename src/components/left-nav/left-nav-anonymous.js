@@ -28,8 +28,8 @@ export default function NavAnonymous() {
       { href: '/anonymous/feeds', label: 'FEEDS', icon: feedsImg },
       { href: '/anonymous/my_feeds', label: 'My FEEDS', icon: myfeedImg },
       { href: '/anonymous/news', label: 'NEWS', icon: newsImg },
-      { href: '/anonymous/survey', label: 'SURVEY', icon: surveyImg },
       { href: '/anonymous/faq', label: 'FAQ', icon: faqImg },
+      { href: '/anonymous/survey', label: 'SURVEY', icon: surveyImg },
     ];
     
     return (
