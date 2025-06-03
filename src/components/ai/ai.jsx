@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import classes from './ai.module.css';
 import ReactMarkdown from 'react-markdown';
 
@@ -11,6 +11,16 @@ export default function AiPageComponent() {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
   const maxLength = 1000;
+
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    const el = textareaRef.current;
+    if (el) {
+      el.style.height = 'auto';
+      el.style.height = Math.min(el.scrollHeight, 300) + 'px'; // cap at 300px
+    }
+  }, [question]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(response);
@@ -33,7 +43,7 @@ export default function AiPageComponent() {
       return;
     }
 
-    if (question.length > 1024) {
+    if (question.length > 8069) {
         setResponse('Your question is too long. Please shorten it.');
         return;
     }
@@ -65,25 +75,36 @@ export default function AiPageComponent() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSearch();
+    }
+  }
+
   return (
     <div className={classes.container}>
-      <div className={classes.topBar}>
-        <input
-          type="text"
-          placeholder="Search AI"
+      <div className={classes.inputWrapper}>
+        <textarea
+          placeholder="Ask AI something..."
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           className={classes.searchInput}
+          onKeyDown={handleKeyDown}
+          ref={textareaRef}
         />
-        <button className={classes.askAiSearch} onClick={handleSearch} disabled={loading}>
-            {loading ? (
-                <>
-                  Loading
-                  <span className={classes.loader}></span>
-                </>
-                ) : (
-                  'Search'
-                )}
+        <button
+          className={classes.inlineSearchButton}
+          onClick={handleSearch}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <span className={classes.loader}></span>
+            </>
+          ) : (
+            '🔍'
+          )}
         </button>
       </div>
 

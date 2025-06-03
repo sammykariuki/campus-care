@@ -4,7 +4,8 @@
   left: 0;
   width: 220px;
   height: calc(100% - 80px); /* Avoid the sticky header area */
-  background-color: #878787;
+  /* background-color: #878787; */
+  background-color: #e2980c;
   padding: 1.5rem 1rem;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   z-index: 90; /* below header */
@@ -33,7 +34,8 @@
 }
 
 .sidebar a.active{
-  background-color: #9a9a9a;
+  /* background-color: #9a9a9a; */
+  background-color: #ececec;
   color: #ffc905;
 }
 
